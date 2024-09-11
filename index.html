@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Park Patrol: Clean & Green</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Park Patrol: Clean & Green</h1>
+    <nav id="main-nav" style="display: none;">
+      <ul>
+        <li><a href="#home" id="home-link">Home</a></li>
+        <li><a href="#events" id="events-link">Sign Up for Events</a></li>
+        <li><a href="#leaderboard" id="leaderboard-link">Leaderboard</a></li>
+        <li><a href="#profile" id="profile-link">Profile</a></li>
+        <li><a href="#preferences" id="preferences-link">Preferences</a></li>
+        <li><a href="#logout" id="logout-link">Log Out</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Sign In / Sign Up Forms -->
+  <section id="auth-section">
+    <h2 id="auth-header">Sign In</h2>
+    <form id="auth-form">
+      <label for="auth-email">Email:</label>
+      <input type="email" id="auth-email" placeholder="Enter your email" required>
+
+      <label for="auth-password">Password:</label>
+      <input type="password" id="auth-password" placeholder="Enter your password" required>
+
+      <button type="submit" id="auth-btn">Sign In</button>
+      <p id="auth-switch">Don't have an account? <a href="#" id="switch-to-signup">Sign Up</a></p>
+      <p id="auth-switch-back" style="display:none;">Back to  <a href="#">Sign In</a></p>
+    </form>
+    <p id="auth-status"></p>
+  </section>
+
+  <!-- Main Content Sections -->
+  <section id="home" style="display: none;">
+    <h2>Welcome to Park Patrol</h2>
+    <p>Join us in keeping our parks clean and green! Sign up for local events, track your volunteer hours, and see how you rank on the leaderboard.</p>
+  </section>
+
+  <section id="events" style="display: none;">
+    <h2>Upcoming Clean-Up Events</h2>
+    <div id="event-list"></div>
+    <button id="signup-btn">Sign Up for Event</button>
+    <p id="signup-status"></p>
+    <p>Invite Friends: <a href="#" id="referral-link">Get Referral Link</a></p>
+  </section>
+
+  <section id="leaderboard" style="display: none;">
+    <h2>Leaderboard</h2>
+    <ol id="leaderboard-list">
+      <li>Jane Doe - 10 events</li>
+      <li>John Smith - 8 events</li>
+      <li>Alex Johnson - 7 events</li>
+    </ol>
+  </section>
+
+  <section id="profile" style="display: none;">
+    <h2>Manage Your Profile</h2>
+    <form id="profile-form">
+      <label for="name">Name:</label>
+      <input type="text" id="name" placeholder="Enter your name">
+      <label for="email">Email:</label>
+      <input type="email" id="email" placeholder="Enter your email">
+      <button type="button" id="update-btn">Update Profile</button>
+    </form>
+    <p id="profile-status"></p>
+
+    <h3>Badges Earned</h3>
+    <div id="badges">No badges earned yet.</div>
+
+    <h3>Track Volunteer Efforts</h3>
+    <p>Total Events Attended: <span id="events-count">0</span></p>
+    <p>Total Hours Volunteered: <span id="hours-volunteered">0</span></p>
+  </section>
+
+  <section id="preferences" style="display: none;">
+    <h2>Set Your Clean-Up Preferences</h2>
+    <form id="preferences-form">
+      <label for="reminders">Event Reminders:</label>
+      <input type="checkbox" id="reminders"> Enable
+
+      <label for="rewards-updates">Rewards Updates:</label>
+      <input type="checkbox" id="rewards-updates"> Enable
+
+      <button type="button" id="save-preferences-btn">Save Preferences</button>
+    </form>
+    <p id="preferences-status"></p>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
