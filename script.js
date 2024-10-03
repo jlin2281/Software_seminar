@@ -1,8 +1,6 @@
-// User data storage simulation
 let users = JSON.parse(localStorage.getItem("users")) || {};
 let currentUser = JSON.parse(localStorage.getItem("currentUser"));
 
-// Handle navigation between sections
 document.querySelectorAll("nav a").forEach(link => {
   link.addEventListener('click', function (e) {
     document.querySelectorAll("section").forEach(section => section.style.display = 'none');
@@ -11,7 +9,6 @@ document.querySelectorAll("nav a").forEach(link => {
   });
 });
 
-// Update UI based on auth state
 function updateUI() {
   if (currentUser) {
     document.getElementById('main-nav').style.display = 'block';
@@ -22,7 +19,6 @@ function updateUI() {
   }
 }
 
-// Sign Up and Sign In
 document.getElementById('auth-form').addEventListener('submit', function (e) {
   e.preventDefault();
   const email = document.getElementById('auth-email').value;
@@ -50,7 +46,6 @@ document.getElementById('auth-form').addEventListener('submit', function (e) {
   }
 });
 
-// Switch between Sign In and Sign Up
 document.getElementById('switch-to-signup').addEventListener('click', function () {
   document.getElementById('auth-header').textContent = 'Sign Up';
   document.getElementById('auth-btn').textContent = 'Sign Up';
@@ -58,7 +53,6 @@ document.getElementById('switch-to-signup').addEventListener('click', function (
   document.getElementById('auth-switch-back').style.display = 'none'; // Hide the back link initially
 });
 
-// Link to return to sign-in after sign-up
 document.getElementById('auth-switch-back').addEventListener('click', function () {
   document.getElementById('auth-header').textContent = 'Sign In';
   document.getElementById('auth-btn').textContent = 'Sign In';
@@ -67,14 +61,12 @@ document.getElementById('auth-switch-back').addEventListener('click', function (
   document.getElementById('auth-switch-back').style.display = 'none'; // Hide the back link after clicking
 });
 
-// Log Out
 document.getElementById('logout-link').addEventListener('click', function () {
   currentUser = null;
   localStorage.removeItem("currentUser");
   updateUI();
 });
 
-// Set Clean-Up Preferences
 document.getElementById('save-preferences-btn').addEventListener('click', function () {
   const reminders = document.getElementById('reminders').checked;
   const rewards = document.getElementById('rewards-updates').checked;
@@ -84,7 +76,6 @@ document.getElementById('save-preferences-btn').addEventListener('click', functi
   document.getElementById('preferences-status').innerText = 'Preferences saved!';
 });
 
-// Track Volunteer Efforts
 function updateVolunteerStats() {
   document.getElementById('events-count').innerText = currentUser.events;
   document.getElementById('hours-volunteered').innerText = currentUser.hours;
@@ -99,12 +90,10 @@ document.getElementById('signup-btn').addEventListener('click', function () {
   updateVolunteerStats();
 });
 
-// Invite Friends to Events
 document.getElementById('referral-link').addEventListener('click', function (e) {
   e.preventDefault();
   alert('Invite your friends with this link: https://parkpatrol.com/invite?ref=' + currentUser.email);
 });
 
-// Initial UI setup
 updateUI();
 if (currentUser) updateVolunteerStats();
