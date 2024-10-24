@@ -32,14 +32,50 @@
 
       <button type="submit" id="auth-btn">Sign In</button>
       <p id="auth-switch">Don't have an account? <a href="#" id="switch-to-signup">Sign Up</a></p>
-      <p id="auth-switch-back" style="display:none;">Back to  <a href="#">Sign In</a></p>
+      <p id="auth-switch-back" style="display:none;">Back to <a href="#">Sign In</a></p>
     </form>
     <p id="auth-status"></p>
   </section>
 
+  <!-- Home Section -->
   <section id="home" style="display: none;">
-    <h2>Welcome to Park Patrol</h2>
-    <p>Join us in keeping our parks clean and green! Sign up for local events, track your volunteer hours, and see how you rank on the leaderboard.</p>
+    <h2>Welcome to Park Patrol!</h2>
+    <p>Join us in keeping our parks clean and green. Below you can find your volunteer stats, upcoming events, and top participants.</p>
+
+    <!-- Your Stats -->
+    <div id="your-stats" style="background-color: #e6f7e6; padding: 20px; border-radius: 12px; margin-bottom: 20px;">
+      <h3>Your Volunteer Stats</h3>
+      <p>Total Events Attended: <span id="home-events-count">0</span></p>
+      <p>Total Hours Volunteered: <span id="home-hours-volunteered">0</span></p>
+    </div>
+
+    <!-- Upcoming Events -->
+    <div id="upcoming-events" style="background-color: #f9ffe5; padding: 20px; border-radius: 12px; margin-bottom: 20px;">
+      <h3>Upcoming Clean-Up Events</h3>
+      <ul>
+        <li>Park Clean-up at Riverside Park - Oct 30</li>
+        <li>Community Trash Pick-up at Central Park - Nov 5</li>
+        <li>Beach Clean-up at Oceanview - Nov 12</li>
+      </ul>
+      <button id="view-events-btn">Sign Up for an Event</button>
+    </div>
+
+    <!-- Leaderboard Teaser -->
+    <div id="leaderboard-teaser" style="background-color: #e6f7ff; padding: 20px; border-radius: 12px;">
+      <h3>Top Volunteers</h3>
+      <ol>
+        <li>Jane Doe - 10 events</li>
+        <li>John Smith - 8 events</li>
+        <li>Alex Johnson - 7 events</li>
+      </ol>
+      <button id="view-leaderboard-btn">View Leaderboard</button>
+    </div>
+
+    <!-- Invite Friends -->
+    <div id="join-us" style="margin-top: 30px;">
+      <p>Invite your friends to join Park Patrol and make a bigger impact!</p>
+      <a href="#" id="invite-link">Share Park Patrol</a>
+    </div>
   </section>
 
   <section id="events" style="display: none;">
